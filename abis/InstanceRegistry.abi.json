@@ -1,0 +1,386 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_governance",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "contract IMishMashInstance",
+				"name": "instance",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "enum InstanceRegistry.InstanceState",
+				"name": "state",
+				"type": "uint8"
+			}
+		],
+		"name": "InstanceStateUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "router",
+				"type": "address"
+			}
+		],
+		"name": "RouterRegistered",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "getAllInstanceAddresses",
+		"outputs": [
+			{
+				"internalType": "contract IMishMashInstance[]",
+				"name": "result",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAllInstances",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "contract IMishMashInstance",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isERC20",
+								"type": "bool"
+							},
+							{
+								"internalType": "contract IERC20",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "denomination",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InstanceRegistry.InstanceState",
+								"name": "state",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint24",
+								"name": "poolSwappingFee",
+								"type": "uint24"
+							},
+							{
+								"internalType": "uint32",
+								"name": "protocolFeePercentage",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct InstanceRegistry.Instance",
+						"name": "instance",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct InstanceRegistry.MishMashInstance[]",
+				"name": "result",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IMishMashInstance",
+				"name": "instance",
+				"type": "address"
+			}
+		],
+		"name": "getPoolToken",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "governance",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "contract IMishMashInstance",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isERC20",
+								"type": "bool"
+							},
+							{
+								"internalType": "contract IERC20",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "denomination",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InstanceRegistry.InstanceState",
+								"name": "state",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint24",
+								"name": "poolSwappingFee",
+								"type": "uint24"
+							},
+							{
+								"internalType": "uint32",
+								"name": "protocolFeePercentage",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct InstanceRegistry.Instance",
+						"name": "instance",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct InstanceRegistry.MishMashInstance[]",
+				"name": "_instances",
+				"type": "tuple[]"
+			},
+			{
+				"internalType": "address",
+				"name": "_router",
+				"type": "address"
+			}
+		],
+		"name": "initialize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "instanceIds",
+		"outputs": [
+			{
+				"internalType": "contract IMishMashInstance",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IMishMashInstance",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "instances",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "isERC20",
+				"type": "bool"
+			},
+			{
+				"internalType": "contract IERC20",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "denomination",
+				"type": "uint256"
+			},
+			{
+				"internalType": "enum InstanceRegistry.InstanceState",
+				"name": "state",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint24",
+				"name": "poolSwappingFee",
+				"type": "uint24"
+			},
+			{
+				"internalType": "uint32",
+				"name": "protocolFeePercentage",
+				"type": "uint32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_instanceId",
+				"type": "uint256"
+			}
+		],
+		"name": "removeInstance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "router",
+		"outputs": [
+			{
+				"internalType": "contract MishMashRouter",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IMishMashInstance",
+				"name": "instance",
+				"type": "address"
+			},
+			{
+				"internalType": "uint32",
+				"name": "newFee",
+				"type": "uint32"
+			}
+		],
+		"name": "setProtocolFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "routerAddress",
+				"type": "address"
+			}
+		],
+		"name": "setRouter",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "contract IMishMashInstance",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isERC20",
+								"type": "bool"
+							},
+							{
+								"internalType": "contract IERC20",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "denomination",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InstanceRegistry.InstanceState",
+								"name": "state",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint24",
+								"name": "poolSwappingFee",
+								"type": "uint24"
+							},
+							{
+								"internalType": "uint32",
+								"name": "protocolFeePercentage",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct InstanceRegistry.Instance",
+						"name": "instance",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct InstanceRegistry.MishMashInstance",
+				"name": "_instance",
+				"type": "tuple"
+			}
+		],
+		"name": "updateInstance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

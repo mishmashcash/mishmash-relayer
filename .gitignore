@@ -1,0 +1,7 @@
+.vscode
+node_modules/
+.env
+.env.test
+dump.rdb
+.idea
+cache/
