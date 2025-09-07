@@ -1,8 +1,7 @@
 require('dotenv').config()
-
+const Web3 = require('web3')
 const fs = require('fs')
 const path = require('path')
-const getWeb3 = require('../src/modules/web3')
 
 const INSTANCE_REGISTRY_ABI = require('../abis/InstanceRegistry.abi.json')
 const ERC20_ABI = require('../abis/ERC20.abi.json')
@@ -11,7 +10,12 @@ const CACHE_DIR = path.join(__dirname, '../cache')
 const INSTANCE_CONFIG_PATH = path.join(CACHE_DIR, 'instances.json')
 
 async function getInstances() {
-  const web3 = getWeb3()
+  const web3 = new Web3(
+    new Web3.providers.HttpProvider(process.env.HTTP_RPC_URL, {
+      timeout: 200000, // ms
+    }),
+  )
+
   const instanceRegistryContract = new web3.eth.Contract(INSTANCE_REGISTRY_ABI, process.env.INSTANCE_REGISTRY)
 
   console.log('Fetching instances from registry...')
